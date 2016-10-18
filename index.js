@@ -25,7 +25,7 @@ app.all("*", function(req, res){
       //console.log(full);
       if (tokens.length == 3) {
         unix = (new Date(full + " 00:00:00").getTime()/1000)/1000;
-        natural = req.path.replace("%20"," ",2).replace("/","");
+        natural = req.path.replace(/\%20/g," ",2).replace("/","");
         month = tokens[0];
         day = tokens[1];
         year = tokens[2];
